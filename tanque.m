@@ -16,5 +16,5 @@ elseif d <= 3*R
     Vol = Vcono + Vcil;
     disp(['El volumen total es: ', num2str(Vol)])
 else
-    disp('Volumen sobrepasado')
+    error('Volumen sobrepasado')
 end
