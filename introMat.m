@@ -160,5 +160,36 @@ f(a, b, c) = a*x^2 + b*x + c
 g_x = f(1, 2, k)
 
 % 1.5.2 Diferenciacion
+% Para calcular derivadas se utiliza el comando diff(funcion)
+syms x
+f = x^3 - cos(x) + 1
+% Primera derivada
+f_diff = diff(f)
+% Segunda derivada
+f_diff_2 = diff(f_diff)
 
 % 1.5.3 Integracion
+% Para calcular integrales indefinidas se utiliza el comando int(funcion)
+f_int = int(f_diff_2)
+
+% Para calcular integrales definidas en un intervalo se utiliza la funcion
+% int(funcion, limite inferior, limite superior). Para integrales impropias
+% se utiliza -inf o inf para indicar el limite inferior y/o superior.
+f_int_d = int(f_diff_2, 1, 3)
+
+% 1.5.4 Resolver ecuaciones
+% Para resolver una ecuacion se utiliza el comando solve(ecuacion)
+ecu = solve(x^2 - x - 1)
+
+% 1.5.5 Representacion grafica de una funcion utilizando el comando
+% ezplot(funcion, intervalo)
+figure
+ezplot(x^2 - x - 1, [-5 5])
+grid on;
+
+%% 1.6 Funciones:
+% Una funcion se define con la palabra reservada function. Su sintaxis
+% corresponde a x1, x2, ..., x_m argumentos de entrada e y1, y2, ..., y_m
+% argumentos de salida.
+% function [y1, y2, ..., y_m] = nombre_funcion(x1, x2, ..., x_m)
+[suma, resta] = sumres(eye(2), eye(2))
