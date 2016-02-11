@@ -1,4 +1,7 @@
 %% Repaso MatLab
+% Para ejecutar cada seccion del programa (1.1 - 1.6) se presiona la tecla
+% ctrl + ENTER
+% Si se desea ejecutar todo el script se presiona la tecla F5
 % Borra la ventana de comandos
 clc;
 % Elimina todas las variables
@@ -7,8 +10,8 @@ clear all;
 % Formato de presentacion del resultado de una operacion aritmetica
 % format rat
 % format hex
-% format short
-format longG
+format short
+% format longG
 a = 3/5
 
 %% 1.1 Expresiones algebraicas:
@@ -90,6 +93,17 @@ v_lin = linspace(0, 2, 11)
 % indice o la posicion 1 y no 0 como en otros lenguajes de programacion.
 v_lin(4)
 % v_lin(0) % Error
+
+% Ahora si se quiere generar un vector en tiempo de ejecucion, se puede ir
+% asignando a cada elemento del vector la expresion que el usuario
+% requiera. Es decir:
+v(1) = 2;
+v(2) = 2*2;
+v(3) = 2*2*2;
+v(4) = 2*2*2*2;
+% Y asi sucesivamente hasta que el usuario lo desee v(n). De esta forma al
+% final si se imprime dicho vector se obtendra v = 2 4 8 16
+v
 
 %% 1.4 Operaciones con polinomios:
 % Los polinomios en matlab se representan como vectores fila. Para ello se
