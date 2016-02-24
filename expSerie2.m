@@ -27,6 +27,8 @@ while e_a > e_s
     aproxValue_arr(i+1, 1) = aproxValue;
     % Error relativo porcentual aproximado
     e_a = abs((aproxValue - aproxValue_old)/aproxValue)*100;
+    % Se escribe aca la aprox anterior porque de esta manera se trabaja con
+    % el valor anterior y no el actual
     aproxValue_old = aproxValue;
     e_a_arr(i+1, 1) = e_a;
     % Error relativo porcentual verdadero

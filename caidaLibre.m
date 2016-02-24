@@ -25,7 +25,7 @@ plot(timeTrue, valueTrue, 'r','LineWidth', 3)
 hold on;
 plot(timeAprox, valueAprox, 'b', 'LineWidth', 3)
 grid on;
-legend('Valo verdadero', 'Valor aproximado');
+legend('Valor verdadero', 'Valor aproximado');
 title(['Solucion analitica vs solucion aproximada '] ,'FontName','Verdana','FontSize',16,'fontWeight','bold');
 xlabel('tiempo (seg)','FontName','Verdana','FontSize',12)
 ylabel('velocidad (m/s)','FontName','Verdana','FontSize',12)
