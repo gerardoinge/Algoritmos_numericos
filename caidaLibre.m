@@ -5,15 +5,18 @@ format longG;
 
 g = 9.8;
 c = 12.5;
-m = input('masa (kg): ');
-ti = input('tiempo inicial (seg): ');
-tf = input('tiempo final (seg): ');
-dt = input('Tamaño del paso o incremento del tiempo: ');
+m = 68.1;
+ti = 0;
+tf = 60;
+dt = 0.1;
 
 %% Solucion analitica
-v_exact = (g*m/c)*(1-exp(-c/m*tf));
-
-disp(['La velocidad exacta del cuerpo es: ' num2str(v_exact) ' m/s'])
+timeTrue = [ti: dt: tf];
+for j=1: length(timeTrue)
+    valueTrue(j, 1) = (g*m/c)*(1-exp(-c/m*timeTrue(j)));
+end
+table(valueTrue, 'VariableNames', {'valorVerdadero'})
+% disp(['La velocidad exacta del cuerpo es: ' num2str(v_exact) ' m/s'])
 
 %% Solucion numerica
 % Velocidad inicial
@@ -64,10 +67,19 @@ cell_tableAprox
 %% Solucion numerica utilizando la funcion eulerAprox
 g = 9.8;
 c = 12.5;
-m = input('masa (kg): ');
-ti = input('tiempo inicial (seg): ');
-tf = input('tiempo final (seg): ');
-dt = input('Tamaño del paso o incremento del tiempo: ');
+m = 68.1;
+ti = 0;
+tf = 60;
+dt = 0.1;
 
-[t, y] = eulerAprox([ti tf], 0, dt, m, c, g);
-[t y]
+[timeAprox, valueAprox] = eulerAprox([ti tf], 0, dt, m, c, g);
+table(timeAprox, valueTrue, valueAprox, 'VariableNames', {'tiempo', 'velocidadVerdadera', 'velocidadAproximada'})
+
+plot(timeTrue, valueTrue, 'r','LineWidth', 3)
+hold on;
+plot(timeAprox, valueAprox, 'b', 'LineWidth', 3)
+grid on;
+legend('Valor aproximado','Valo verdadero');
+title(['Solucion analitica vs solucion aproximada '] ,'FontName','Verdana','FontSize',16,'fontWeight','bold');
+xlabel('tiempo (seg)','FontName','Verdana','FontSize',12)
+ylabel('velocidad (m/s)','FontName','Verdana','FontSize',12)

@@ -1,7 +1,7 @@
 %% Calculo de la funcion coseno a traves de una serie infinita
 clc;
 clear all;
-format short;
+format shortG;
 
 sumAprox = 0;
 
@@ -21,14 +21,17 @@ plot(0:n-1, error_arr(:,1))
 
 cosx = trueValue
 cosAprox = sumAprox
-table = [order_arr kron(cosx, ones(length(order_arr), 1)) sumAprox_arr error_arr];
+table1 = [order_arr kron(cosx, ones(length(order_arr), 1)) sumAprox_arr error_arr];
 cell_table = {'orden', 'true', 'aprox', 'error %'};
 for f=2: n+1
     for c=1: 4
-        cell_table{f, c} = table(f-1, c);
+        cell_table{f, c} = table1(f-1, c);
     end
 end
 cell_table
+
+encabezado = {'Orden';'Verdadero';'Aproximacion';'error'};
+tabla_cos = table(order_arr, kron(cosx, ones(length(order_arr), 1)), sumAprox_arr, error_arr, 'VariableNames', encabezado)
 
 %% Funcion coseno
 sumAprox = 0;

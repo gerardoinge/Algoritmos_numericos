@@ -8,9 +8,9 @@ clc;
 clear all;
 
 % Formato de presentacion del resultado de una operacion aritmetica
-% format rat
+format rat
 % format hex
-format short
+% format short
 % format longG
 a = 3/5
 
@@ -85,7 +85,7 @@ v_aut = 0:0.2:2
 
 % Con linspace(a, b , n) se genera un vector fila de n elementos
 % linealmente espaciados desde a hasta b
-v_lin = linspace(0, 2, 11)
+v_lin = linspace(0, 10, 11)
 
 % 1.3.3 Acceder a elementos de un vector
 % Para acceder a los elementos de un vector se utiliza vector(elemento),
