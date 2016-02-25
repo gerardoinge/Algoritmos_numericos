@@ -7,11 +7,12 @@ format longG;
 % Con la siguiente funcion se puede establecer el numero de cifras
 % significativas, si se establecen n cifras significativas y aparecen menos
 % cifras significativas significa que los digitos restantes son cero.
-digits(2);
+digits(3);
 
-n = 6;
+n = 2;
 
 syms x f(x) diff_i_f(x)
+disp('Funcion objetivo:')
 f(x) = -0.154689*x^4 - 0.15*x^3 - 0.5*x^2 - 0.25*x + 1.2;
 f(x) = vpa(f(x));
 pretty(f(x))
